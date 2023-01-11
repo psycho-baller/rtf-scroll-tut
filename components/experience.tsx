@@ -41,7 +41,7 @@ function Mesh({ color, index }: { color: string; index: number }) {
     const t = clock.getElapsedTime();
 
     meshRef.current.position.y = -index * 10;
-    searchTextRef.current.position.y = -index * 10 * 2.1;
+    searchTextRef.current.position.y = meshRef.current.position.y * 2.1;
 
     meshRef.current.rotation.y = Math.sin(t) * 5;
   });
@@ -53,7 +53,7 @@ function Mesh({ color, index }: { color: string; index: number }) {
         <meshStandardMaterial color={color} />
       </mesh>
       <mesh ref={searchTextRef}>
-        <Html className={`opacity-0 ${color}`}>{color}</Html>
+        <Html className={`${color}`}></Html>
       </mesh>
     </>
   );

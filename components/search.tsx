@@ -16,15 +16,15 @@ export const SearchComponent = () => {
     e.preventDefault(); // prevent page reload
     if (classNames?.length > 0) {
       if (currentCount < totalCount) {
-        index = currentCount;
-        setCurrentCount((curr) => curr + 1);
+        index = currentCount; // scroll to the next match
+        setCurrentCount((curr) => curr + 1); // increment the current count
       } else {
         setCurrentCount(1);
-        index = 0;
+        index = 0; // reset to the first match
       }
 
       if (classNames[index]) {
-        classNames[index].scrollIntoView({
+        classNames[index].scrollIntoView({ 
           behavior: "auto",
           block: "center",
         });
